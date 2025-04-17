@@ -372,7 +372,7 @@ export const dynamicSlotSize = (variable: {
     slotValue?: string
 }): number => {
     try {
-        if (!variable?.slotValue) throw Error(`Missing slot value.`)
+        if (!variable?.slotValue) throw Error("Missing slot value.")
         const last4bits = '0x' + variable.slotValue.slice(-1)
         const last4bitsNum = BigNumber.from(last4bits).toNumber()
         // If the last 4 bits is an even number then it's not a dynamic slot

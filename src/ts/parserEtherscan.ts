@@ -73,7 +73,7 @@ export class EtherscanParser {
             this.url = 'https://api.ftmscan.com/api'
             this.apikey = '71KRX13XPZMGR3D1Q85W78G2DSZ4JPMAEX'
         } else if (network === 'optimism') {
-            this.url = `https://api-optimistic.etherscan.io/api`
+            this.url = "https://api-optimistic.etherscan.io/api"
             this.apikey = 'FEXS1HXVA4Y2RNTMEA8V1UTK21S4JWHH9U'
         } else if (network === 'moonbeam') {
             this.url = 'https://api-moonbeam.moonscan.io/api'

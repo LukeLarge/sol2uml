@@ -242,7 +242,7 @@ program
                 combinedOptions.outputFileName,
             )
 
-            debug(`Finished generating UML`)
+            debug("Finished generating UML")
         } catch (err) {
             console.error(err)
             process.exit(2)
@@ -321,7 +321,7 @@ WARNING: sol2uml does not use the Solidity compiler so may differ with solc. A k
             // If not an address and the contractName option has not been specified
             if (!isAddress(fileFolderAddress) && !combinedOptions.contract) {
                 throw Error(
-                    `Must use the \`-c, --contract <name>\` option to specify the contract to draw the storage diagram for when sourcing from local files.\nThis option is not needed when sourcing from a blockchain explorer with a contract address.`,
+                    "Must use the \`-c, --contract <name>\` option to specify the contract to draw the storage diagram for when sourcing from local files.\nThis option is not needed when sourcing from a blockchain explorer with a contract address.",
                 )
             }
 
@@ -365,7 +365,7 @@ WARNING: sol2uml does not use the Solidity compiler so may differ with solc. A k
                 } else {
                     if (!isAddress(fileFolderAddress)) {
                         throw Error(
-                            `Can not get storage slot values if first param is not an address and the \`--storage\` option is not used.`,
+                            "Can not get storage slot values if first param is not an address and the \`--storage\` option is not used.",
                         )
                     }
                     storageAddress = fileFolderAddress

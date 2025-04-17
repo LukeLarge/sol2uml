@@ -205,7 +205,7 @@ export function convertAST2UmlClasses(
             }
         })
     } else {
-        throw new Error(`AST node not of type SourceUnit`)
+        throw new Error("AST node not of type SourceUnit")
     }
 
     if (umlClasses.length > 0) {
