@@ -152,11 +152,10 @@ sol2uml storage ./src/contracts -c StructStorage
 
 ![StructStorage](./StructStorage.svg)
 
-The first `exampleStruct` variables is of `ExampleStruct` type. sol2uml will display how many slots the struct uses and then reference an expanded view of how the struct variables are stored in the slots. 
+The first `exampleStruct` variables is of `ExampleStruct` type. sol2uml will display how many slots the struct uses and then reference an expanded view of how the struct variables are stored in the slots.
 If any of the struct variables are arrays, strings, bytes or other structs, they will recursively be referenced until the elementary types are reached.
 
 The second `dynamicStructs` variable is a dynamic array of type `ExampleStruct`. When sol2uml is run without the `-d, --data` option, it does not know how long the array is so will just display what the first array item would look like.
-
 
 The following is generated from the `StructStorage` contract deployed on Arbitrum to [0xB8F98C34e40E0D201CE2F3440cE92d0B5c5CfFe2](https://arbiscan.io/address/0xB8F98C34e40E0D201CE2F3440cE92d0B5c5CfFe2#code).
 
@@ -191,13 +190,13 @@ Variables `uninitString` and `emptyString` have the same slot values of zero byt
 
 The `name` variable with a 22 character string fits in a single slot.
 The [UTF-8](https://en.wikipedia.org/wiki/UTF-8) encoded string is stored from right to left. The last byte on the right is the length of the string that is left-bit shifted. Mathematically, the length is multiplied by 2.
-So the 22 character string becomes 22 * 2 = 44 which is 2C in hexadecimal.
+So the 22 character string becomes 22 \* 2 = 44 which is 2C in hexadecimal.
 
 The `long2` variable has a string that is 59 characters long.
 As it is greater than 31 bytes, it can't fit in slot 5 which the variable is assigned.
 Slot 5 contains the length of the string that is left-bit shifted and the last bit set to 1.
 Mathematically, the length is multiplied by 2 and 1 is added.
-So the encoded length of the `long2` variable becomes 59 * 2 + 1 = 119 which is 0x77 in hexadecimal format.
+So the encoded length of the `long2` variable becomes 59 \* 2 + 1 = 119 which is 0x77 in hexadecimal format.
 sol2uml will display the decoded string lengths when strings are greater than 31 bytes and the string when they are less than 32 bytes.
 
 If the rightmost bit of a string variable's slot is set to 1 then the string is dynamically stored in another location and then the slot just contains the encoded string length.
@@ -289,7 +288,6 @@ sol2uml storage 0x2fdfbb2b905484f1445e23a97c97f65fe0e43dec -v \
   --hideExpand drip --hideValues \
   -o examples/storage/origin-oeth-dripper-hide-values.svg
 ```
-
 
 ## USDC
 
