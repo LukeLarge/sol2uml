@@ -15,7 +15,7 @@ const SkippedLinesMarker = `\n---`
  * @param lineBuff the number of lines to display before and after each change.
  */
 export const diffCode = (codeA: string, codeB: string, lineBuff: number) => {
-    // @ts-ignore
+    // @ts-expect-error
     const dmp = new diff_match_patch()
     const diff = dmp.diff_main(codeA, codeB)
     dmp.diff_cleanupSemantic(diff)
