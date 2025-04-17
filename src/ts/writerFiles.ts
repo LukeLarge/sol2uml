@@ -60,14 +60,14 @@ export const writeOutputFiles = async (
 }
 
 export function convertDot2Svg(dot: string): any {
-    debug("About to convert dot to SVG")
+    debug('About to convert dot to SVG')
 
     try {
         return vizRenderStringSync(dot)
     } catch (err) {
         console.error(`Failed to convert dot to SVG. ${err.message}`)
         console.log(dot)
-        throw new Error("Failed to parse dot string", { cause: err })
+        throw new Error('Failed to parse dot string', { cause: err })
     }
 }
 

@@ -12,7 +12,7 @@ export const isAddress = (input: string): boolean => {
 }
 
 export const parseSolidityVersion = (compilerVersion: string): string => {
-    const result = compilerVersion.match("v(\\d+.\\d+.\\d+)")
+    const result = compilerVersion.match('v(\\d+.\\d+.\\d+)')
     if (result[1]) {
         return result[1]
     }

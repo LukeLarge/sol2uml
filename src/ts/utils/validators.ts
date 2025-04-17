@@ -12,7 +12,7 @@ export const validateAddress = (address: string): string => {
     } catch (err) {}
 
     throw new InvalidArgumentError(
-        "Address must be in hexadecimal format with a 0x prefix.",
+        'Address must be in hexadecimal format with a 0x prefix.',
     )
 }
 
@@ -27,7 +27,7 @@ export const validateNames = (variables: string): string[] => {
     } catch (err) {}
 
     throw new InvalidArgumentError(
-        "Must be a comma-separate list of names with no white spaces.",
+        'Must be a comma-separate list of names with no white spaces.',
     )
 }
 
@@ -37,7 +37,7 @@ export const validateLineBuffer = (lineBufferParam: string): number => {
         if (lineBuffer >= 0) return lineBuffer
     } catch (err) {}
     throw new InvalidOptionArgumentError(
-        "Must be a zero or a positive integer.",
+        'Must be a zero or a positive integer.',
     )
 }
 
@@ -64,7 +64,7 @@ export const validateSlotNames = (
         return results
     } catch (err) {}
     throw new InvalidOptionArgumentError(
-        "Must be a comma-separate list of slots with no white spaces.",
+        'Must be a comma-separate list of slots with no white spaces.',
     )
 }
 
@@ -82,6 +82,6 @@ export const validateTypes = (typesString: string): string[] => {
     } catch (err) {}
 
     throw new InvalidArgumentError(
-        "Slot type must be an elementary type which includes dynamic and fixed size arrays. eg address, address[], uint256, int256[2], bytes32, string, bool",
+        'Slot type must be an elementary type which includes dynamic and fixed size arrays. eg address, address[], uint256, int256[2], bytes32, string, bool',
     )
 }
