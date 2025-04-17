@@ -20,10 +20,10 @@ const debug = require('debug')('sol2uml')
  */
 export function convertUmlClasses2Dot(
     umlClasses: UmlClass[],
-    clusterFolders: boolean = false,
+    clusterFolders = false,
     classOptions: ClassOptions = {},
 ): string {
-    let dotString: string = `
+    let dotString = `
 digraph UmlClassDiagram {
 rankdir=BT
 arrowhead=open
@@ -68,7 +68,7 @@ label="${codeFolder}"`
 }
 
 let subGraphCount = 0
-function getSubGraphName(clusterFolders: boolean = false) {
+function getSubGraphName(clusterFolders = false) {
     if (clusterFolders) {
         return ` cluster_${subGraphCount++}`
     }
@@ -91,7 +91,7 @@ export function addAssociationsToDot(
     umlClasses: UmlClass[],
     classOptions: ClassOptions = {},
 ): string {
-    let dotString: string = ''
+    let dotString = ''
 
     // for each class
     for (const sourceUmlClass of umlClasses) {

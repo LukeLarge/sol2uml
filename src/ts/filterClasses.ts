@@ -84,7 +84,7 @@ export const classesConnectedToBaseContract = (
     umlClasses: readonly UmlClass[],
     baseContractName: string,
     weightedDirectedGraph: WeightedDiGraph,
-    depth: number = 1000,
+    depth = 1000,
 ): { [contractName: string]: UmlClass } => {
     // Find the base UML Class from the base contract name
     const baseUmlClass = umlClasses.find(({ name }) => {

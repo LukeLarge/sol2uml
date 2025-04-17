@@ -52,7 +52,7 @@ export function convertAST2UmlClasses(
     node: ASTNode,
     relativePath: string,
     remappings: Remapping[],
-    filesystem: boolean = false,
+    filesystem = false,
 ): UmlClass[] {
     const imports: Import[] = []
     umlClasses = []
@@ -699,7 +699,7 @@ function parseTypeName(typeName: TypeName): [string, AttributeType] {
             return [typeName.type + '\\(\\)', AttributeType.Function]
         case 'ArrayTypeName':
             const [arrayElementType] = parseTypeName(typeName.baseTypeName)
-            let length: string = ''
+            let length = ''
             if (Number.isInteger(typeName.length)) {
                 length = typeName.length.toString()
             } else if (typeName.length?.type === 'NumberLiteral') {
