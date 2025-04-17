@@ -12,7 +12,7 @@ const debug = require('debug')('sol2uml')
 export const parseUmlClassesFromFiles = async (
     filesOrFolders: readonly string[],
     ignoreFilesOrFolders: readonly string[],
-    subfolders: number = -1,
+    subfolders = -1,
 ): Promise<UmlClass[]> => {
     const files = await getSolidityFilesFromFolderOrFiles(
         filesOrFolders,
@@ -42,7 +42,7 @@ export const parseUmlClassesFromFiles = async (
 export async function getSolidityFilesFromFolderOrFiles(
     folderOrFilePaths: readonly string[],
     ignoreFilesOrFolders: readonly string[],
-    subfolders: number = -1,
+    subfolders = -1,
 ): Promise<string[]> {
     let files: string[] = []
 
@@ -61,7 +61,7 @@ export async function getSolidityFilesFromFolderOrFiles(
 export function getSolidityFilesFromFolderOrFile(
     folderOrFilePath: string,
     ignoreFilesOrFolders: readonly string[] = [],
-    depthLimit: number = -1,
+    depthLimit = -1,
 ): Promise<string[]> {
     debug(`About to get Solidity files under ${folderOrFilePath}`)
 

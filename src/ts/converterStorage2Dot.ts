@@ -19,7 +19,7 @@ export const convertStorages2Dot = (
         hideValues?: boolean
     },
 ): string => {
-    let dotString: string = `
+    let dotString = `
 digraph StorageDiagram {
 rankdir=LR
 arrowhead=open

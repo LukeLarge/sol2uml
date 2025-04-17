@@ -77,7 +77,7 @@ const dotClassTitle = (
     umlClass: UmlClass,
     options: { hideFilename?: boolean } = {},
 ): string => {
-    let stereoName: string = ''
+    let stereoName = ''
     const relativePath =
         options.hideFilename || isAddress(umlClass.relativePath)
             ? ''
@@ -340,7 +340,7 @@ const dotOperatorStereotype = (
 
 const dotParameters = (
     parameters: Parameter[],
-    returnParams: boolean = false,
+    returnParams = false,
 ): string => {
     if (parameters.length == 1 && !parameters[0].name) {
         if (returnParams) {
