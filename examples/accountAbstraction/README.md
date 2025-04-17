@@ -4,14 +4,15 @@ The following sol2uml diagrams have been run against the [ERC-4337](https://eips
 [eth-infinitism/account-abstraction](https://github.com/eth-infinitism/account-abstraction)
 GitHub repository. The main contracts are
 
-* [contracts/core/IAccount.sol](https://github.com/eth-infinitism/account-abstraction/blob/develop/contracts/interfaces/IAccount.sol)
-* [contracts/samples/SimpleAccount.sol](https://github.com/eth-infinitism/account-abstraction/blob/develop/contracts/samples/SimpleAccount.sol)
-* [contracts/core/EntryPoint.sol](https://github.com/eth-infinitism/account-abstraction/blob/develop/contracts/core/EntryPoint.sol)
+-   [contracts/core/IAccount.sol](https://github.com/eth-infinitism/account-abstraction/blob/develop/contracts/interfaces/IAccount.sol)
+-   [contracts/samples/SimpleAccount.sol](https://github.com/eth-infinitism/account-abstraction/blob/develop/contracts/samples/SimpleAccount.sol)
+-   [contracts/core/EntryPoint.sol](https://github.com/eth-infinitism/account-abstraction/blob/develop/contracts/core/EntryPoint.sol)
 
 The full option names have been used below rather than the short names for readability.
 For example, `--baseContractNames` instead of just `-b`.
 
 To run the following, set the `AA` environment variable to the location of the Account Abstraction contracts. For example
+
 ```sh
 export AA=../../../account-abstraction/contracts
 ```
@@ -47,7 +48,6 @@ sol2uml class $AA --baseContractNames SimpleAccount --squash --depth 0 --outputF
 ```
 
 ![Simple Account Squashed](./SimpleAccountSquashed.svg)
-
 
 ## Simple Account
 

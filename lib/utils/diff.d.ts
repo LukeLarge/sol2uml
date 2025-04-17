@@ -4,4 +4,8 @@
  * @param codeB
  * @param lineBuff the number of lines to display before and after each change.
  */
-export declare const diffCode: (codeA: string, codeB: string, lineBuff: number) => void;
+export declare const diffCode: (
+    codeA: string,
+    codeB: string,
+    lineBuff: number,
+) => void

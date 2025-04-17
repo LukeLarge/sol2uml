@@ -1,5 +1,5 @@
-import { BigNumberish } from '@ethersproject/bignumber';
-import { StorageSection, Variable } from './converterClasses2Storage';
+import { BigNumberish } from '@ethersproject/bignumber'
+import { StorageSection, Variable } from './converterClasses2Storage'
 /**
  * Adds the slot values to the variables in the storage section.
  * This can be rerun for a section as it will only get if the slot value
@@ -11,8 +11,14 @@ import { StorageSection, Variable } from './converterClasses2Storage';
  * @param arrayItems the number of items to display at the start and end of an array
  * @param blockTag block number or `latest`
  */
-export declare const addSlotValues: (url: string, contractAddress: string, storageSection: StorageSection, arrayItems: number, blockTag: BigNumberish) => Promise<void>;
-export declare const parseValue: (variable: Variable) => string;
+export declare const addSlotValues: (
+    url: string,
+    contractAddress: string,
+    storageSection: StorageSection,
+    arrayItems: number,
+    blockTag: BigNumberish,
+) => Promise<void>
+export declare const parseValue: (variable: Variable) => string
 /**
  * Get storage slot values from JSON-RPC API provider.
  * @param url of Ethereum JSON-RPC API provider. eg Infura or Alchemy
@@ -22,7 +28,12 @@ export declare const parseValue: (variable: Variable) => string;
  * @param blockTag block number or `latest`
  * @return slotValues array of 32 byte slot values as hexadecimal strings
  */
-export declare const getSlotValues: (url: string, contractAddress: string, slotKeys: readonly BigNumberish[], blockTag?: BigNumberish | 'latest') => Promise<string[]>;
+export declare const getSlotValues: (
+    url: string,
+    contractAddress: string,
+    slotKeys: readonly BigNumberish[],
+    blockTag?: BigNumberish | 'latest',
+) => Promise<string[]>
 /**
  * Get storage slot values from JSON-RPC API provider.
  * @param url of Ethereum JSON-RPC API provider. eg Infura or Alchemy
@@ -32,7 +43,12 @@ export declare const getSlotValues: (url: string, contractAddress: string, slotK
  * @param blockTag block number or `latest`
  * @return slotValue 32 byte slot value as hexadecimal string
  */
-export declare const getSlotValue: (url: string, contractAddress: string, slotKey: BigNumberish, blockTag: BigNumberish | 'latest') => Promise<string>;
+export declare const getSlotValue: (
+    url: string,
+    contractAddress: string,
+    slotKey: BigNumberish,
+    blockTag: BigNumberish | 'latest',
+) => Promise<string>
 /**
  * Calculates the number of string characters or bytes of a string or bytes type.
  * See the following for how string and bytes are stored in storage slots
@@ -41,9 +57,9 @@ export declare const getSlotValue: (url: string, contractAddress: string, slotKe
  * @return bytes the number of bytes of the dynamic slot. If static, zero is return.
  */
 export declare const dynamicSlotSize: (variable: {
-    name?: string;
-    type?: string;
-    slotValue?: string;
-}) => number;
-export declare const convert2String: (bytes: string) => string;
-export declare const escapeString: (text: string) => string;
+    name?: string
+    type?: string
+    slotValue?: string
+}) => number
+export declare const convert2String: (bytes: string) => string
+export declare const escapeString: (text: string) => string

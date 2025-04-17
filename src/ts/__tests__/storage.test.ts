@@ -110,11 +110,11 @@ describe('storage parser', () => {
                 const { size, dynamic } = calcStorageByteSize(
                     attribute,
                     umlClass,
-                    []
+                    [],
                 )
                 expect(size).toEqual(expectedSize)
                 expect(dynamic).toEqual(expectedDynamic)
-            }
+            },
         )
 
         // TODO implement support for sizing expressions. eg
@@ -207,7 +207,7 @@ describe('storage parser', () => {
             const { size, dynamic } = calcStorageByteSize(
                 attribute,
                 umlCLass,
-                otherClasses
+                otherClasses,
             )
             expect(size).toEqual(expectedSize)
             expect(dynamic).toEqual(expectedDynamic)
@@ -360,8 +360,8 @@ describe('storage parser', () => {
                         type.slice(-1) === ']'
                             ? AttributeType.Array
                             : isElementary(type)
-                            ? AttributeType.Elementary
-                            : AttributeType.UserDefined
+                              ? AttributeType.Elementary
+                              : AttributeType.UserDefined
                     testAttributes.push({
                         name: `test ${i}`,
                         type,
@@ -385,7 +385,7 @@ describe('storage parser', () => {
                 const { size, dynamic } = calcStorageByteSize(
                     attribute,
                     umlCLass,
-                    [...otherClasses, testStruct]
+                    [...otherClasses, testStruct],
                 )
                 expect(size).toEqual(expected)
                 expect(dynamic).toEqual(false)
@@ -396,13 +396,13 @@ describe('storage parser', () => {
         it('bytes to string', () => {
             expect(
                 parseBytes32String(
-                    '0x5465737453746f7261676520636f6e7472616374000000000000000000000000'
-                )
+                    '0x5465737453746f7261676520636f6e7472616374000000000000000000000000',
+                ),
             ).toEqual('TestStorage contract')
         })
         it('string to bytes', () => {
             expect(formatBytes32String('Less than 31 bytes')).toEqual(
-                '0x4c657373207468616e2033312062797465730000000000000000000000000000'
+                '0x4c657373207468616e2033312062797465730000000000000000000000000000',
             )
         })
     })
@@ -426,7 +426,7 @@ describe('storage parser', () => {
             ${'0x01'}            | ${'0xb10e2d527612073b26eecdfd717e6a320cf44b4afac2b0732d9fcbe2b7fa0cf6'}
         `('slot $slot', ({ slot, expected }) => {
             expect(calcSectionOffset({ ...variable, fromSlot: slot })).toEqual(
-                expected
+                expected,
             )
         })
     })
