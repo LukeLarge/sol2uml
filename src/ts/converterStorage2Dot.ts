@@ -98,7 +98,7 @@ export function convertStorage2Dot(
             if (displayData[i]) {
                 dotString += ` | ${variable.slotValue || ''}${linePad}`
             } else {
-                dotString += ` | `
+                dotString += ' | '
             }
         })
     }
@@ -107,7 +107,7 @@ export function convertStorage2Dot(
         storageSection.type === StorageSectionType.Contract
             ? '\\<inherited contract\\>.'
             : ''
-    const dataLine2 = options.data ? `\\ndecoded data` : ''
+    const dataLine2 = options.data ? '\\ndecoded data' : ''
     dotString += `} | { type: ${contractVariablePrefix}variable (bytes)${dataLine2}`
 
     // For each slot

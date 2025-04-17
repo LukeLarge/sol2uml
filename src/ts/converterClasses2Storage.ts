@@ -132,7 +132,7 @@ export const optionStorageVariables = (
     // The slotTypes default should mean this never happens
     if (!slotTypes.length) {
         throw Error(
-            `The slotTypes option must be used with the slotNames option`,
+            'The slotTypes option must be used with the slotNames option',
         )
     }
 

@@ -6,7 +6,7 @@ import diff_match_patch, {
 } from 'diff-match-patch'
 const clc = require('cli-color')
 
-const SkippedLinesMarker = `\n---`
+const SkippedLinesMarker = '\n---'
 
 /**
  * Compares code using Google's diff_match_patch and displays the results in the console.
